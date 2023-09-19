@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include "main.h"
+#include <unistd.h>
+#include <stdlib.h>
+#include <stdarg.h>
+
+/**
+ * custom_printf - A custom printf function that handles custom conversion '%d' and '%i'.
+ *
+ * @format: The format string.
+ * @...: The variable arguments.
+ */
+void custom_printf(const char *format, ...)
+{
+	va_list args;
+
+	va_start(args, format);
+
+	while (*format)
+	{
+		if (*format == '%' && (*(format + 1) == 'd' || *(format + 1) == 'i'))
+		{
+			int value = va_arg(args, int);
+			char buffer[32];
+			int len = snprintf(buffer, sizeof(buffer), "%d", value);
+
+			write(STDOUT_FILENO, buffer, len);
+			format += 2;
+		}
+		else
+		{
+			char ch = *format;
+
+			write(STDOUT_FILENO, &ch, 1);
+			format++;
+		}
+	}
+
+	va_end(args);
+}

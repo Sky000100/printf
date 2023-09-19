@@ -2,7 +2,7 @@
 #include "main.h"
 #include <string.h>
 /**
- * custom_printf - A custom printf function that handles
+ * simple_printf - A custom printf function that handles
  *				custom conversion 'r'.
  *
  * @format: The format string.
@@ -12,6 +12,7 @@ void simple_printf(const char *format, ...)
 {
 	va_list args;
 	const char *str;
+
 	va_start(args, format);
 
 	while (*format)

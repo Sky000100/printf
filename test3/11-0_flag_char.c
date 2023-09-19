@@ -2,7 +2,8 @@
 #include "main.h"
 
 /**
- * printIntWithZeroPadding - Print the integer with zero padding and the specified field width.
+ * printIntWithZeroPadding - Print the integer with zero padding
+ *				and the specified field width.
  *
  * @num: The integer value.
  * @width: The field width.
@@ -13,7 +14,8 @@ void printIntWithZeroPadding(int num, int width)
 }
 
 /**
- * printDoubleWithZeroPadding - Print the double with zero padding and the specified field width.
+ * printDoubleWithZeroPadding - Print the double with zero padding
+ *				and the specified field width.
  *
  * @dbl: The double value.
  * @width: The field width.
@@ -24,7 +26,8 @@ void printDoubleWithZeroPadding(double dbl, int width)
 }
 
 /**
- * printHexWithZeroPadding - Print the hexadecimal integer with zero padding and the specified field width.
+ * printHexWithZeroPadding - Print the hexadecimal integer with zero padding
+ *					and the specified field width.
  *
  * @hex: The hexadecimal integer value.
  * @width: The field width.

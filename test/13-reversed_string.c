@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "main.h"
-
+#include <string.h>
 /**
  * custom_printf - A custom printf function that handles
  *				custom conversion 'r'.
@@ -8,10 +8,10 @@
  * @format: The format string.
  * @...: The variable arguments.
  */
-void custom_printf(const char *format, ...)
+void simple_printf(const char *format, ...)
 {
 	va_list args;
-
+	const char *str;
 	va_start(args, format);
 
 	while (*format)
@@ -19,7 +19,7 @@ void custom_printf(const char *format, ...)
 		if (*format == '%' && *(format + 1) == 'r')
 		{
 			format += 2;
-			const char *str = va_arg(args, const char *);
+			str = va_arg(args, const char *);
 
 			print_reversed_string(str);
 		}

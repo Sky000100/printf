@@ -10,6 +10,7 @@
 void custom_printf(const char *format, ...)
 {
 	va_list args;
+	const char *str;
 
 	va_start(args, format);
 
@@ -18,7 +19,7 @@ void custom_printf(const char *format, ...)
 		if (*format == '%' && *(format + 1) == 'S')
 		{
 			format += 2;
-			const char *str = va_arg(args, const char *);
+			str = va_arg(args, const char *);
 
 			while (*str)
 			{
